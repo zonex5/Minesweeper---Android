@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_height="match_parent"
+              android:layout_width="match_parent"
+              android:orientation="vertical"
+              android:padding="5dp">
+
+    <LinearLayout android:layout_height="wrap_content"
+                  android:layout_width="match_parent"
+                  android:orientation="horizontal">
+
+        <TextView
+                android:id="@+id/N"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold" android:text="1" android:textColor="#ffffff"
+                android:layout_gravity="center" android:layout_marginLeft="3dp" android:layout_marginRight="7dp"/>
+
+        <LinearLayout android:layout_height="wrap_content"
+                      android:layout_width="match_parent"
+                      android:orientation="vertical"
+                      android:padding="5dp">
+
+            <LinearLayout android:layout_height="wrap_content"
+                          android:layout_width="match_parent"
+                          android:orientation="horizontal">
+                <TextView
+                        android:id="@+id/Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="17sp"
+                        android:textStyle="bold" android:text="name"
+                        android:layout_weight="1" android:textColor="#ffffff"/>
+                <TextView
+                        android:id="@+id/Score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textStyle="bold" android:text="score"
+                        android:singleLine="false" android:layout_weight="0" android:textColor="#5a9dcf"/>
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/Comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp" android:text="comment" android:textColor="#e3e3e3"
+                    android:textStyle="italic"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

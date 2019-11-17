@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_gamelogic" default="compile.module.gamelogic">
+    <dirname property="module.gamelogic.basedir" file="${ant.file.module_gamelogic}"/>
+
+    <property name="module.jdk.home.gamelogic" value="${jdk.home.android_4.0.3_platform}"/>
+    <property name="module.jdk.bin.gamelogic" value="${jdk.bin.android_4.0.3_platform}"/>
+    <property name="module.jdk.classpath.gamelogic" value="jdk.classpath.android_4.0.3_platform"/>
+
+    <property name="compiler.args.gamelogic" value="${compiler.args}"/>
+
+    <property name="gamelogic.output.dir" value="${module.gamelogic.basedir}/../out/production/GameLogic"/>
+    <property name="gamelogic.testoutput.dir" value="${module.gamelogic.basedir}/../out/test/GameLogic"/>
+
+    <path id="gamelogic.module.bootclasspath">
+        <!-- Paths to be included in compilation bootclasspath -->
+    </path>
+
+    <path id="gamelogic.module.production.classpath">
+        <path refid="${module.jdk.classpath.gamelogic}"/>
+    </path>
+
+    <path id="gamelogic.runtime.production.module.classpath">
+        <pathelement location="${gamelogic.output.dir}"/>
+    </path>
+
+    <path id="gamelogic.module.classpath">
+        <path refid="${module.jdk.classpath.gamelogic}"/>
+        <pathelement location="${gamelogic.output.dir}"/>
+    </path>
+
+    <path id="gamelogic.runtime.module.classpath">
+        <pathelement location="${gamelogic.testoutput.dir}"/>
+        <pathelement location="${gamelogic.output.dir}"/>
+    </path>
+
+
+    <patternset id="excluded.from.module.gamelogic">
+        <patternset refid="ignored.files"/>
+    </patternset>
+
+    <patternset id="excluded.from.compilation.gamelogic">
+        <patternset refid="compiler.excluded"/>
+        <patternset refid="excluded.from.module.gamelogic"/>
+    </patternset>
+
+    <path id="gamelogic.module.sourcepath">
+        <dirset dir="${module.gamelogic.basedir}">
+            <include name="src"/>
+        </dirset>
+    </path>
+
+
+    <target name="compile.module.gamelogic" depends="compile.module.gamelogic.production,compile.module.gamelogic.tests"
+            description="Compile module GameLogic"/>
+
+    <target name="compile.module.gamelogic.production" depends="register.custom.compilers"
+            description="Compile module GameLogic; production classes">
+        <mkdir dir="${gamelogic.output.dir}"/>
+        <javac2 destdir="${gamelogic.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}"
+                memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.gamelogic}/javac">
+            <compilerarg line="${compiler.args.gamelogic}"/>
+            <bootclasspath refid="gamelogic.module.bootclasspath"/>
+            <classpath refid="gamelogic.module.production.classpath"/>
+            <src refid="gamelogic.module.sourcepath"/>
+            <patternset refid="excluded.from.compilation.gamelogic"/>
+        </javac2>
+
+        <copy todir="${gamelogic.output.dir}">
+            <fileset dir="${module.gamelogic.basedir}/src">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+                <patternset refid="excluded.from.compilation.gamelogic"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="compile.module.gamelogic.tests"
+            depends="register.custom.compilers,compile.module.gamelogic.production"
+            description="compile module GameLogic; test classes" unless="skip.tests"/>
+
+    <target name="clean.module.gamelogic" description="cleanup module">
+        <delete dir="${gamelogic.output.dir}"/>
+        <delete dir="${gamelogic.testoutput.dir}"/>
+    </target>
+</project>

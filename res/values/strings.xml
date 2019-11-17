@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="version">1.9</string>
+
+    <string name="app_name">Minesweeper Pro</string>
+    <string name="hepl_caption">Rules of the game</string>
+    <string name="help">The object is to open all safe squares in the quickest time possible. Minesweeper starts when a
+        player touches on a square.
+        The first click is always safe and reveals a number or an opening surrounded by numbers. Each number tells you
+        how many mines touch the square. You can mark a mine by putting a flag on it with the long touch.
+        You win by clearing all the safe squares and lose if you click on a mine. A mine counter tells you how many
+        mines are still hidden and a time counter keeps track of your score. There are three levels of difficulty:
+        Beginner has 10 mines, Intermediate has 40 mines, and Expert has 99 mines.
+        Sometimes in Minesweeper you have to guess. A typical case is a 50/50 guess when one mine is hidden in two
+        squares. However, there are other times when you can improve your chance of guessing correctly.
+    </string>
+
+    <string name="rec_caption">You have set a new record!</string>
+    <string name="rec_name">Your name:</string>
+    <string name="rec_captiononline">Your result:</string>
+
+    <string name="level0">Beginner</string>
+    <string name="level1">Intermediate</string>
+    <string name="level2">Expert</string>
+    <string name="level3">Custom</string>
+    <string name="score_caption">Leaderboard</string>
+    <string name="reset">Reset</string>
+    <string name="level">Level</string>
+    <string name="quit">Are you sure you want to exit??</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="men_zoom">Zoom</string>
+    <string name="men_in">Zoom in</string>
+    <string name="men_out">Zoom out</string>
+    <string name="men_chemp">Leaderboard</string>
+    <string name="men_level">Level</string>
+    <string name="men_about">About</string>
+    <string name="men_help">Help</string>
+    <string name="men_set">Settings</string>
+    <string name="men_share">Share</string>
+    <string name="men_other">Other free games</string>
+
+    <string name="set_caption">Settings</string>
+    <string name="set_vibro">Use vibration</string>
+
+    <string name="lev_rows">Rows:</string>
+    <string name="lev_cols">Cols:</string>
+    <string name="lev_mines">Mines count:</string>
+
+    <string name="set_online">Use online leaderboard</string>
+    <string name="intro">Online leaderboard is available! \n You can monitor the results of the other players. \n
+        To activate this features, check the item \"Use online leaderboard\" in menu \"Settings\".
+    </string>
+    <string name="comment">Comment:</string>
+
+    <string name="server_error">Error! Unable to connect to remote server.</string>
+    <string name="data_error">Error retrieving data.</string>
+    <string name="local">The results are stored locally.</string>
+    <string name="score_error">Failed to save the results.</string>
+
+    <string name="share">The best implementation of the game \'Minesweeper\' for Android!</string>
+    <string name="share0">I recommend!</string>
+    <string name="share1">Minesweeper - a game of all time )))</string>
+    <string name="share2">The message will be published on your wall.</string>
+
+    <string name="ratebt">Rate the game</string>
+    <string name="saving">Saving the results...</string>
+    <string name="getdata">Getting data...</string>
+
+    <string name="victory1">You found all the mines in</string>
+    <string name="victory2">Do you want to share the results with your friends on Facebook?</string>
+    <string name="achiev1">My most recent achievement!</string>
+    <string name="achiev2" formatted="false">I opened all the mines for %d seconds at the level \"%s\".</string>
+    <string name="toast_victory">You win!</string>
+    <string name="toast_gameover">Game over</string>
+    <string name="appName">Classic "Minesweeper" from Windows (Android)</string>
+
+    <string name="recommande">Do you want recommend \"Minesweeper from Windows\" to your friends?</string>
+
+    <string name="btShare">Share</string>
+    <string name="btClose">Close</string>
+
+    <string name="congretulation">Congratulations!</string>
+</resources>

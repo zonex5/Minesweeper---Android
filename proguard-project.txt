@@ -1,0 +1,14 @@
+-keep class com.skiller.deviceSpecific.ui.screens.JavaScriptInterface {public *;}
+
+-dontwarn com.google.ads.**
+
+-keepclassmembers class com.zooz.android.lib.** {
+    public *;
+}
+
+-keepclassmembers class **.R$* {
+    public static <fields>;
+}
+
+-keep class **.R$*
+

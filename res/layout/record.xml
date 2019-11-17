@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:id="@+id/record"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+            android:id="@+id/rec_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/rec_caption"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"/>
+    <TextView
+            android:id="@+id/rec_seconds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="999s"
+            android:textSize="18sp"
+            android:layout_gravity="center_horizontal"/>
+    <TextView
+            android:id="@+id/rec_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/rec_name"/>
+    <EditText
+            android:id="@+id/rec_input"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Anonim"
+            android:selectAllOnFocus="true"
+            android:inputType="textShortMessage"
+            android:textSize="18sp" android:maxLines="1" android:maxLength="10"/>
+
+    <Button
+            android:id="@+id/rec_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="OK"
+            android:layout_gravity="center_horizontal"/>
+</LinearLayout>

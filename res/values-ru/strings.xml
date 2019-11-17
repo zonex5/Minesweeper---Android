@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Сапёр Pro</string>
+    <string name="hepl_caption">Правила игры</string>
+    <string name="help">Цель игры состоит в том, чтобы как можно быстрее найти все мины на минном поле, не вскрыв ни
+        одну из них.
+        \n Игрок открывает ячейки, стараясь не открыть ячейку с миной. Открыв ячейку с миной, он проигрывает. Если под
+        открытой ячейкой мины нет, то в ней появляется число, показывающее, сколько ячеек, соседствующих с только что
+        открытой, «заминировано»; используя эти числа, игрок пытается рассчитать расположение мин, однако иногда даже в
+        середине и в конце игры некоторые ячейки всё же приходится открывать наугад. Если под соседними ячейками тоже
+        нет мин, то открывается некоторая «незаминированная» область до ячеек, в которых есть цифры. «Заминированные»
+        ячейки игрок может пометить, чтобы случайно не открыть их.
+        Открыв все «незаминированные» ячейки, игрок выигрывает. \n
+        - Игрок имеет возможность открыть любую ячейку простым нажатием на неё. Если ячейка содержит мину, вы проиграли.
+        \n
+        - Если мины нет, в ячейке появится цифра, которая указывает, сколько мин находится в восьми смежных с ней
+        ячейках. \n
+        - Чтобы пометить ячейку, в которой по вашему мнению находится мина, нажмите на неё длинным нажатием. \n
+        - Игровое поле состоит из счетчика мин, секундомера и минного поля. \n
+    </string>
+
+    <string name="rec_caption">Вы установили новый рекорд!</string>
+    <string name="rec_name">Ваше имя:</string>
+    <string name="rec_captiononline">Ваш результат:</string>
+
+    <string name="level0">Новичoк</string>
+    <string name="level1">Любитель</string>
+    <string name="level2">Профессионал</string>
+    <string name="level3">Особые</string>
+    <string name="score_caption">Результаты</string>
+    <string name="reset">Сбросить</string>
+    <string name="level">Уровень сложности</string>
+    <string name="quit">Вы действительно хотите выйти?</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+
+    <string name="men_zoom">Размер ячейки</string>
+    <string name="men_in">Увеличить</string>
+    <string name="men_out">Уменьшить</string>
+    <string name="men_chemp">Результаты</string>
+    <string name="men_level">Уровень</string>
+    <string name="men_about">О программе</string>
+    <string name="men_help">Помощь</string>
+    <string name="men_set">Настройки</string>
+    <string name="men_share">Поделиться</string>
+    <string name="men_other">Другие программы автора</string>
+
+    <string name="set_caption">Установки</string>
+    <string name="set_vibro">Использовать вибрацию</string>
+
+    <string name="lev_rows">Ширина:</string>
+    <string name="lev_cols">Высота:</string>
+    <string name="lev_mines">Число мин:</string>
+
+    <string name="set_online">Использовать онлайн таблицу рекордов</string>
+    <string name="intro">Теперь доступна онлайн таблица рекордов! Вы можете следить за результатами других игроков. \n
+        Чтобы активировать эту возможность, отметьте пункт \"Использовать онлайн таблицу рекордов\" в меню
+        \"Настройки.\"
+    </string>
+    <string name="comment">Комментарий:</string>
+
+    <string name="server_error">Ошибка! Не удалось подключиться к удаленному серверу.</string>
+    <string name="data_error">Ошибка получения данных.</string>
+    <string name="local">Нет подключения к сети. Результаты сохранены локально.</string>
+    <string name="score_error">Не удалось сохранить результаты.</string>
+
+    <string name="share">Лучшая реализация игры \'Сапёр\' для Android!</string>
+    <string name="share0">Рекомендую!</string>
+    <string name="share1">Сапёр - головоломка всех времён и народов )))</string>
+    <string name="share2">Запись будет опубликована на вашей стене.</string>
+
+    <string name="ratebt">Оценить игру</string>
+    <string name="saving">Сохранение результатов...</string>
+    <string name="getdata">Получение данных...</string>
+
+    <string name="victory1">Вы нашли все мины за</string>
+    <string name="victory2">Хотите поделиться результатом с друзьями на Facebook?</string>
+    <string name="achiev1">Моё новое достижение!</string>
+    <string name="achiev2" formatted="false">Я открыл все мины за %d сек. на уровне \"%s\".</string>
+    <string name="toast_victory">Вы нашли все мины!</string>
+    <string name="toast_gameover">Вы подорвались на мине!</string>
+    <string name="appName">Классический "Сапёр" из Windows (Android)</string>
+    <string name="recommande">Вы хотите рекомендовать \"Сапёр из Windows\" своим друзьям?</string>
+
+    <string name="btShare">Поделиться</string>
+    <string name="btClose">Закрыть</string>
+
+    <string name="congretulation">Поздравляем!</string>
+</resources>

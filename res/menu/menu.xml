@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menzoom"
+          android:icon="@drawable/zoom"
+          android:title="@string/men_zoom"
+          android:showAsAction="always"/>
+
+    <item android:id="@+id/level"
+          android:icon="@drawable/level"
+          android:title="@string/men_level"
+          android:showAsAction="always"/>
+
+    <item android:id="@+id/settings"
+          android:icon="@drawable/tool"
+          android:title="@string/men_set"
+          android:showAsAction="always"/>
+
+    <item android:id="@+id/score"
+          android:icon="@drawable/score"
+          android:title="@string/men_chemp"
+          android:showAsAction="ifRoom"/>
+
+    <!--
+    <item android:id="@+id/pro"
+          android:icon="@drawable/pro"
+          android:title="Pro Version"
+          android:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/share"
+           android:icon="@drawable/share"
+           android:title="@string/men_share"/>-->
+
+    <item android:id="@+id/help"
+          android:icon="@drawable/help"
+          android:title="@string/men_help"
+          android:showAsAction="never"/>
+
+    <!-- <item android:id="@+id/other"
+           android:title="@string/men_other"/>
+
+     <item android:id="@+id/rate"
+           android:title="@string/ratebt"/>-->
+
+    <item android:id="@+id/info"
+          android:icon="@drawable/info"
+          android:title="@string/men_about"
+          android:showAsAction="never"/>
+</menu>

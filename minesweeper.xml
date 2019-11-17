@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="minesweeper_pro" default="all">
+  
+  
+  <property file="minesweeper.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="128m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/.pyc/**"/>
+    <exclude name="**/.pyo/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/*.lib/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/.bundle/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.orig/**"/>
+  </patternset>
+  <patternset id="compiler.excluded">
+    <exclude name="${basedir}/gen/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.zip"/>
+    <include name="*.apk"/>
+    <include name="*.war"/>
+    <include name="*.egg"/>
+    <include name="*.ear"/>
+    <include name="*.ane"/>
+    <include name="*.swc"/>
+    <include name="*.jar"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <include name="**/?*.properties"/>
+    <include name="**/?*.xml"/>
+    <include name="**/?*.gif"/>
+    <include name="**/?*.png"/>
+    <include name="**/?*.jpeg"/>
+    <include name="**/?*.jpg"/>
+    <include name="**/?*.html"/>
+    <include name="**/?*.dtd"/>
+    <include name="**/?*.tld"/>
+    <include name="**/?*.ftl"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.android_4.1.2_platform" value="${jdk.home.android_4.1.2_platform}/../Program Files (x86)/Java/jdk1.6.0_45/bin"/>
+  <path id="jdk.classpath.android_4.1.2_platform">
+    <fileset dir="${jdk.home.android_4.1.2_platform}">
+      <include name="platforms/android-16/android.jar"/>
+      <include name="platforms/android-16/data/res"/>
+      <include name="tools/support/annotations.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.android_4.1.2_platform}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.android_4.1.2_platform}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.android_4.1.2_platform"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.libs.classpath">
+    <fileset dir="${basedir}/libs">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <pathelement location="${javac2.home}/javac2.jar"/>
+    <pathelement location="${javac2.home}/jdom.jar"/>
+    <pathelement location="${javac2.home}/asm4-all.jar"/>
+    <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module GameLogic -->
+  
+  <dirname property="module.gamelogic.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.gamelogic" value="${jdk.home.android_4.1.2_platform}"/>
+  <property name="module.jdk.bin.gamelogic" value="${jdk.bin.android_4.1.2_platform}"/>
+  <property name="module.jdk.classpath.gamelogic" value="jdk.classpath.android_4.1.2_platform"/>
+  
+  <property name="compiler.args.gamelogic" value="${compiler.args}"/>
+  
+  <property name="gamelogic.output.dir" value="${module.gamelogic.basedir}/out/production/GameLogic"/>
+  <property name="gamelogic.testoutput.dir" value="${module.gamelogic.basedir}/out/test/GameLogic"/>
+  
+  <path id="gamelogic.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="gamelogic.module.production.classpath">
+    <path refid="${module.jdk.classpath.gamelogic}"/>
+  </path>
+  
+  <path id="gamelogic.runtime.production.module.classpath">
+    <pathelement location="${gamelogic.output.dir}"/>
+  </path>
+  
+  <path id="gamelogic.module.classpath">
+    <path refid="${module.jdk.classpath.gamelogic}"/>
+    <pathelement location="${gamelogic.output.dir}"/>
+  </path>
+  
+  <path id="gamelogic.runtime.module.classpath">
+    <pathelement location="${gamelogic.testoutput.dir}"/>
+    <pathelement location="${gamelogic.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.gamelogic">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.gamelogic">
+    <patternset refid="compiler.excluded"/>
+    <patternset refid="excluded.from.module.gamelogic"/>
+  </patternset>
+  
+  <path id="gamelogic.module.sourcepath">
+    <dirset dir="${module.gamelogic.basedir}/GameLogic">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.gamelogic" depends="compile.module.gamelogic.production,compile.module.gamelogic.tests" description="Compile module GameLogic"/>
+  
+  <target name="compile.module.gamelogic.production" depends="register.custom.compilers" description="Compile module GameLogic; production classes">
+    <mkdir dir="${gamelogic.output.dir}"/>
+    <javac2 destdir="${gamelogic.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.gamelogic}/javac">
+      <compilerarg line="${compiler.args.gamelogic}"/>
+      <bootclasspath refid="gamelogic.module.bootclasspath"/>
+      <classpath refid="gamelogic.module.production.classpath"/>
+      <src refid="gamelogic.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.gamelogic"/>
+    </javac2>
+    
+    <copy todir="${gamelogic.output.dir}">
+      <fileset dir="${module.gamelogic.basedir}/GameLogic/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+        <patternset refid="excluded.from.compilation.gamelogic"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.gamelogic.tests" depends="register.custom.compilers,compile.module.gamelogic.production" description="compile module GameLogic; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.gamelogic" description="cleanup module">
+    <delete dir="${gamelogic.output.dir}"/>
+    <delete dir="${gamelogic.testoutput.dir}"/>
+  </target>
+  
+  
+  <!-- Module Minesweeper -->
+  
+  <dirname property="module.minesweeper.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.minesweeper" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.minesweeper" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.minesweeper" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.minesweeper" value="${compiler.args}"/>
+  
+  <property name="minesweeper.output.dir" value="${module.minesweeper.basedir}/out/production/Minesweeper"/>
+  <property name="minesweeper.testoutput.dir" value="${module.minesweeper.basedir}/out/test/Minesweeper"/>
+  
+  <path id="minesweeper.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="minesweeper.module.production.classpath">
+    <path refid="${module.jdk.classpath.minesweeper}"/>
+    <pathelement location="${gamelogic.output.dir}"/>
+    <path refid="library.libs.classpath"/>
+  </path>
+  
+  <path id="minesweeper.runtime.production.module.classpath">
+    <pathelement location="${minesweeper.output.dir}"/>
+    <path refid="gamelogic.runtime.production.module.classpath"/>
+    <path refid="library.libs.classpath"/>
+  </path>
+  
+  <path id="minesweeper.module.classpath">
+    <path refid="${module.jdk.classpath.minesweeper}"/>
+    <pathelement location="${minesweeper.output.dir}"/>
+    <pathelement location="${gamelogic.testoutput.dir}"/>
+    <pathelement location="${gamelogic.output.dir}"/>
+    <path refid="library.libs.classpath"/>
+  </path>
+  
+  <path id="minesweeper.runtime.module.classpath">
+    <pathelement location="${minesweeper.testoutput.dir}"/>
+    <pathelement location="${minesweeper.output.dir}"/>
+    <path refid="gamelogic.runtime.module.classpath"/>
+    <path refid="library.libs.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.minesweeper">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.minesweeper">
+    <patternset refid="compiler.excluded"/>
+    <patternset refid="excluded.from.module.minesweeper"/>
+  </patternset>
+  
+  <path id="minesweeper.module.sourcepath">
+    <dirset dir="${module.minesweeper.basedir}">
+      <include name="src"/>
+      <include name="gen"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.minesweeper" depends="compile.module.minesweeper.production,compile.module.minesweeper.tests" description="Compile module Minesweeper"/>
+  
+  <target name="compile.module.minesweeper.production" depends="register.custom.compilers,compile.module.gamelogic" description="Compile module Minesweeper; production classes">
+    <mkdir dir="${minesweeper.output.dir}"/>
+    <javac2 destdir="${minesweeper.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.minesweeper}/javac">
+      <compilerarg line="${compiler.args.minesweeper}"/>
+      <bootclasspath refid="minesweeper.module.bootclasspath"/>
+      <classpath refid="minesweeper.module.production.classpath"/>
+      <src refid="minesweeper.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.minesweeper"/>
+    </javac2>
+    
+    <copy todir="${minesweeper.output.dir}">
+      <fileset dir="${module.minesweeper.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+        <patternset refid="excluded.from.compilation.minesweeper"/>
+      </fileset>
+      <fileset dir="${module.minesweeper.basedir}/gen">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+        <patternset refid="excluded.from.compilation.minesweeper"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.minesweeper.tests" depends="register.custom.compilers,compile.module.minesweeper.production" description="compile module Minesweeper; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.minesweeper" description="cleanup module">
+    <delete dir="${minesweeper.output.dir}"/>
+    <delete dir="${minesweeper.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.gamelogic, clean.module.minesweeper" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.gamelogic, compile.module.minesweeper" description="build all modules"/>
+  
+  <target name="all" depends="build.modules" description="build all"/>
+</project>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:id="@+id/record"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+            android:id="@+id/rec_msg"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/rec_captiononline"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"/>
+    <TextView
+            android:id="@+id/rec_seconds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_gravity="center_horizontal"/>
+    <TextView
+            android:id="@+id/rec_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/rec_name"/>
+    <EditText
+            android:id="@+id/rec_input"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Anonim"
+            android:selectAllOnFocus="true"
+            android:textSize="18sp" android:inputType="textShortMessage" android:maxLines="1" android:maxLength="20"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/comment"
+            android:id="@+id/textView" android:layout_gravity="left|center_vertical" android:layout_marginLeft="10dp"/>
+    <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rec_comment" android:layout_gravity="left|center_vertical" android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp" android:layout_marginRight="10dp" android:maxLines="1"
+            android:maxLength="40"/>
+    <Button
+            android:id="@+id/rec_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="OK"
+            android:layout_gravity="center_horizontal"/>
+</LinearLayout>
