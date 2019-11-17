@@ -1,4 +1,4 @@
-# Minesweeper game for Android without game frameworks (!!!)
+# Minesweeper game for Android without game frameworks (!)
 
 Minesweeper classic game for Android
 
